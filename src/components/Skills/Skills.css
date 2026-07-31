@@ -1,0 +1,897 @@
+/* =========================================================
+   SKILLS SECTION
+   ========================================================= */
+
+.skills-section {
+  position: relative;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 50% 48%,
+      rgba(139, 92, 246, 0.09),
+      transparent 34%
+    ),
+    #020617;
+  color: white;
+}
+
+.skills-glow {
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+  filter: blur(90px);
+  opacity: 0.22;
+}
+
+.skills-glow-one {
+  width: 420px;
+  height: 420px;
+  left: 5%;
+  top: 25%;
+  background: rgba(124, 58, 237, 0.22);
+}
+
+.skills-glow-two {
+  width: 380px;
+  height: 380px;
+  right: 4%;
+  bottom: 15%;
+  background: rgba(168, 85, 247, 0.16);
+}
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.skills-eyebrow {
+  margin: 0;
+  color: #a78bfa;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.skills-heading {
+  margin: 10px 0 0;
+  color: white;
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.skills-heading span {
+  color: #a855f7;
+  text-shadow: 0 0 35px rgba(168, 85, 247, 0.35);
+}
+
+/* =========================================================
+   MAIN PLAYGROUND
+   ========================================================= */
+
+.skills-playground {
+  position: relative;
+
+  width: 100%;
+  min-height: 790px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 34px;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(139, 92, 246, 0.14),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(59, 130, 246, 0.035),
+      transparent 30%
+    ),
+    rgba(2, 6, 23, 0.68);
+
+  box-shadow:
+    inset 0 0 80px rgba(139, 92, 246, 0.035),
+    0 30px 100px rgba(0, 0, 0, 0.22);
+
+  perspective: 1200px;
+}
+
+/*
+   IMPORTANT:
+   This creates a safe zone at the top.
+
+   It prevents the first row of skill cards
+   from disappearing underneath the fixed navbar.
+*/
+.skills-playground::before {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  top: 0;
+
+  height: 78px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(2, 6, 23, 0.35),
+      transparent
+    );
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* =========================================================
+   CURSOR SPOTLIGHT
+   ========================================================= */
+
+.skills-cursor-spotlight {
+  position: absolute;
+
+  width: 360px;
+  height: 360px;
+
+  left: calc(var(--spotlight-x) * 1%);
+  top: calc(var(--spotlight-y) * 1%);
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(168, 85, 247, 0.14) 0%,
+      rgba(139, 92, 246, 0.07) 25%,
+      transparent 70%
+    );
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* =========================================================
+   ORBIT RINGS
+   ========================================================= */
+
+.skills-orbit {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border: 1px solid rgba(139, 92, 246, 0.10);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.skills-orbit-one {
+  width: 310px;
+  height: 310px;
+}
+
+.skills-orbit-two {
+  width: 500px;
+  height: 500px;
+}
+
+.skills-orbit-three {
+  width: 690px;
+  height: 690px;
+}
+
+/* =========================================================
+   CENTER SKILLS CORE
+   ========================================================= */
+
+/*
+   The core is positioned from the playground itself.
+
+   NOT from the floating cards.
+
+   Therefore it stays mathematically centered.
+*/
+
+.skills-core {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 190px;
+  height: 190px;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(139, 92, 246, 0.23),
+      rgba(15, 23, 42, 0.92) 65%
+    );
+
+  border: 1px solid rgba(167, 139, 250, 0.24);
+
+  box-shadow:
+    0 0 0 1px rgba(139, 92, 246, 0.05),
+    0 0 45px rgba(139, 92, 246, 0.16),
+    inset 0 0 45px rgba(139, 92, 246, 0.08);
+
+  z-index: 12;
+
+  text-align: center;
+
+  pointer-events: none;
+}
+
+.skills-core-ring {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.skills-core-ring-one {
+  width: 220px;
+  height: 220px;
+
+  border: 1px solid rgba(168, 85, 247, 0.16);
+}
+
+.skills-core-ring-two {
+  width: 250px;
+  height: 250px;
+
+  border: 1px dashed rgba(168, 85, 247, 0.10);
+}
+
+.skills-core-symbol {
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 6px;
+
+  border-radius: 50%;
+
+  color: #c4b5fd;
+
+  background: rgba(139, 92, 246, 0.12);
+
+  box-shadow:
+    0 0 25px rgba(139, 92, 246, 0.18);
+}
+
+.skills-core span {
+  margin-top: 1px;
+
+  color: rgba(196, 181, 253, 0.58);
+
+  font-size: 0.62rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+.skills-core strong {
+  margin-top: 4px;
+
+  color: white;
+
+  font-size: 1.45rem;
+  line-height: 1;
+
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.skills-core small {
+  margin-top: 7px;
+
+  color: #67e8f9;
+
+  font-size: 0.55rem;
+  font-weight: 700;
+
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   FLOATING SKILLS CONTAINER
+   ========================================================= */
+
+.floating-skills-container {
+  position: absolute;
+
+  /*
+     Safe area.
+
+     78px top prevents cards from entering navbar space.
+     28px on the other sides prevents edge clipping.
+  */
+  top: 78px;
+  right: 28px;
+  bottom: 28px;
+  left: 28px;
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   INDIVIDUAL SKILL CARD
+   ========================================================= */
+
+.floating-skill {
+  position: absolute;
+
+  width: max-content;
+  min-width: 120px;
+  max-width: 150px;
+
+  pointer-events: auto;
+
+  transform-style: preserve-3d;
+
+  cursor: pointer;
+}
+
+.floating-skill-inner {
+  position: relative;
+
+  min-height: 52px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(30, 41, 59, 0.90),
+      rgba(15, 23, 42, 0.90)
+    );
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.22),
+    inset 0 0 18px rgba(139, 92, 246, 0.035);
+
+  backdrop-filter: blur(14px);
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.floating-skill:hover .floating-skill-inner {
+  border-color: rgba(167, 139, 250, 0.45);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(45, 35, 80, 0.96),
+      rgba(15, 23, 42, 0.96)
+    );
+
+  box-shadow:
+    0 18px 38px rgba(0, 0, 0, 0.28),
+    0 0 28px rgba(139, 92, 246, 0.14);
+}
+
+.floating-skill-icon {
+  width: 30px;
+  height: 30px;
+
+  flex: 0 0 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  color: #a78bfa;
+
+  background: rgba(139, 92, 246, 0.11);
+
+  box-shadow:
+    inset 0 0 12px rgba(139, 92, 246, 0.08);
+}
+
+.floating-skill span {
+  color: #cbd5e1;
+
+  font-size: 0.72rem;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.floating-skill-shine {
+  position: absolute;
+
+  top: 0;
+  left: 10%;
+
+  width: 80%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(196, 181, 253, 0.35),
+      transparent
+    );
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+}
+
+.floating-skill:hover .floating-skill-shine {
+  opacity: 1;
+}
+
+/* =========================================================
+   INDIVIDUAL SKILL POSITIONS
+   ========================================================= */
+
+/*
+   These positions intentionally spread the skills
+   around the COMPLETE playground.
+
+   Every card has its own position.
+*/
+
+/* 1 React */
+.floating-skill:nth-child(1) {
+  left: 8%;
+  top: 6%;
+}
+
+/* 2 JavaScript */
+.floating-skill:nth-child(2) {
+  left: 42%;
+  top: 2%;
+}
+
+/* 3 HTML */
+.floating-skill:nth-child(3) {
+  right: 7%;
+  top: 7%;
+}
+
+/* 4 CSS */
+.floating-skill:nth-child(4) {
+  left: 20%;
+  top: 18%;
+}
+
+/* 5 Bootstrap */
+.floating-skill:nth-child(5) {
+  left: 3%;
+  top: 34%;
+}
+
+/* 6 Tailwind */
+.floating-skill:nth-child(6) {
+  right: 14%;
+  top: 19%;
+}
+
+/* 7 ASP.NET */
+.floating-skill:nth-child(7) {
+  left: 4%;
+  top: 57%;
+}
+
+/* 8 Node.js */
+.floating-skill:nth-child(8) {
+  right: 2%;
+  top: 41%;
+}
+
+/* 9 MySQL */
+.floating-skill:nth-child(9) {
+  left: 14%;
+  top: 74%;
+}
+
+/* 10 C++ */
+.floating-skill:nth-child(10) {
+  left: 4%;
+  bottom: 28%;
+}
+
+/* 11 Java */
+.floating-skill:nth-child(11) {
+  left: 37%;
+  bottom: 4%;
+}
+
+/* 12 C# */
+.floating-skill:nth-child(12) {
+  right: 29%;
+  bottom: 8%;
+}
+
+/* 13 Git */
+.floating-skill:nth-child(13) {
+  right: 9%;
+  top: 58%;
+}
+
+/* 14 GitHub */
+.floating-skill:nth-child(14) {
+  right: 2%;
+  top: 23%;
+}
+
+/* 15 Postman */
+.floating-skill:nth-child(15) {
+  left: 47%;
+  bottom: 3%;
+}
+
+/* 16 VS Code */
+.floating-skill:nth-child(16) {
+  right: 22%;
+  top: 38%;
+}
+
+/* 17 Figma */
+.floating-skill:nth-child(17) {
+  right: 2%;
+  bottom: 16%;
+}
+
+/* 18 Visual Studio */
+.floating-skill:nth-child(18) {
+  right: 27%;
+  top: 47%;
+}
+
+/* 19 IntelliJ IDEA */
+.floating-skill:nth-child(19) {
+  left: 10%;
+  bottom: 12%;
+}
+
+/* 20 Three.js */
+.floating-skill:nth-child(20) {
+  left: 51%;
+  top: 5%;
+}
+
+/* 21 GSAP */
+.floating-skill:nth-child(21) {
+  right: 31%;
+  top: 12%;
+}
+
+/* 22 Framer Motion */
+.floating-skill:nth-child(22) {
+  right: 10%;
+  bottom: 7%;
+}
+
+/* 23 React Tilt */
+.floating-skill:nth-child(23) {
+  left: 25%;
+  top: 54%;
+}
+
+/* 24 React CountUp */
+.floating-skill:nth-child(24) {
+  right: 18%;
+  bottom: 27%;
+}
+
+/* 25 EmailJS */
+.floating-skill:nth-child(25) {
+  left: 38%;
+  bottom: 18%;
+}
+
+/* 26 Vite */
+.floating-skill:nth-child(26) {
+  right: 4%;
+  bottom: 37%;
+}
+
+/* 27 Swagger */
+.floating-skill:nth-child(27) {
+  left: 30%;
+  top: 10%;
+}
+
+/* =========================================================
+   CATEGORY LIST
+   ========================================================= */
+
+.skills-category-list {
+  margin-top: 24px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 10px;
+}
+
+.skills-category-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 12px;
+
+  background: rgba(15, 23, 42, 0.55);
+
+  color: #64748b;
+
+  font-size: 0.68rem;
+  font-weight: 500;
+
+  backdrop-filter: blur(10px);
+}
+
+.skills-category-item svg {
+  color: #8b5cf6;
+}
+
+/* =========================================================
+   LEARNING CARD
+   ========================================================= */
+
+.skills-learning-card {
+  margin-top: 22px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  padding: 20px 22px;
+
+  border: 1px solid rgba(139, 92, 246, 0.12);
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(139, 92, 246, 0.055),
+      rgba(15, 23, 42, 0.45)
+    );
+}
+
+.skills-learning-icon {
+  width: 38px;
+  height: 38px;
+
+  flex: 0 0 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  color: #a78bfa;
+
+  background: rgba(139, 92, 246, 0.10);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .skills-playground {
+    min-height: 720px;
+  }
+
+  .floating-skills-container {
+    top: 85px;
+    right: 20px;
+    bottom: 22px;
+    left: 20px;
+  }
+
+  .skills-orbit-three {
+    width: 600px;
+    height: 600px;
+  }
+
+  .skills-core {
+    width: 175px;
+    height: 175px;
+  }
+
+  .floating-skill-inner {
+    min-height: 48px;
+    padding: 8px 11px;
+  }
+
+  .floating-skill {
+    min-width: 108px;
+  }
+
+  .floating-skill span {
+    font-size: 0.66rem;
+  }
+
+  .floating-skill-icon {
+    width: 27px;
+    height: 27px;
+    flex-basis: 27px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .skills-section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .skills-playground {
+    min-height: auto;
+
+    padding: 30px 18px;
+
+    overflow: visible;
+
+    border-radius: 24px;
+  }
+
+  .skills-playground::before {
+    display: none;
+  }
+
+  .skills-cursor-spotlight {
+    display: none;
+  }
+
+  .skills-orbit {
+    display: none;
+  }
+
+  .skills-core {
+    position: relative;
+
+    left: auto;
+    top: auto;
+
+    transform: none;
+
+    margin: 0 auto 35px;
+
+    width: 155px;
+    height: 155px;
+  }
+
+  .skills-core-ring-one {
+    width: 180px;
+    height: 180px;
+  }
+
+  .skills-core-ring-two {
+    width: 205px;
+    height: 205px;
+  }
+
+  .floating-skills-container {
+    position: relative;
+
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+    width: 100%;
+  }
+
+  .floating-skill,
+  .floating-skill:nth-child(n) {
+    position: relative;
+
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+
+    width: 100%;
+
+    transform: none !important;
+  }
+
+  .floating-skill-inner {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .floating-skill span {
+    font-size: 0.68rem;
+  }
+
+  .skills-category-list {
+    margin-top: 18px;
+  }
+
+  .skills-learning-card {
+    padding: 16px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+  .floating-skills-container {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-heading {
+    font-size: 2.5rem;
+  }
+
+  .skills-core {
+    width: 145px;
+    height: 145px;
+  }
+
+  .skills-core strong {
+    font-size: 1.25rem;
+  }
+}
