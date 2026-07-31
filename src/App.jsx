@@ -5,6 +5,9 @@ import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
 import Experience from "./components/Experience/Experience";
 import Skills from "./components/Skills/Skills";
+import Projects from "./components/projects/Projects";
+import Certificates from "./components/Certificates/Certificates";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   return (
@@ -22,10 +25,12 @@ function App() {
 
         <Skills />
 
-        {/* Future sections */}
-        <section id="projects" className="h-1" />
-        <section id="certificates" className="h-1" />
-        <section id="contact" className="h-1" />
+        <Projects />
+
+        <Certificates />
+
+        <Contact />
+
       </main>
     </Layout>
   );
