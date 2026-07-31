@@ -1,32 +1,24 @@
-import Background from "./components/Background/Background";
+import Layout from "./components/Layout/Layout";
 
 function App() {
   return (
-    <main className="min-h-screen bg-[#050816] text-white relative overflow-hidden">
-
-      <Background />
-
-      <div className="flex items-center justify-center h-screen">
-
+    <Layout>
+      <main className="min-h-screen flex items-center justify-center px-6">
         <div className="text-center">
-
-          <h1 className="text-6xl font-black">
-
-            Cosmic Developer
-
-          </h1>
-
-          <p className="mt-4 text-gray-400">
-
-            Background Engine Loaded
-
+          <p className="mb-4 text-sm uppercase tracking-[0.4em] text-violet-400">
+            Portfolio
           </p>
 
+          <h1 className="text-5xl font-black tracking-tight sm:text-7xl">
+            Diksha Pandey
+          </h1>
+
+          <p className="mt-5 text-lg text-slate-400">
+            Full Stack Developer
+          </p>
         </div>
-
-      </div>
-
-    </main>
+      </main>
+    </Layout>
   );
 }
 
