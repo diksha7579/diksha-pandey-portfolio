@@ -3,6 +3,7 @@ import Welcome from "./components/Welcome/Welcome";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
+import Experience from "./components/Experience/Experience";
 
 function App() {
   return (
@@ -16,8 +17,9 @@ function App() {
 
         <About />
 
+        <Experience />
+
         {/* Future sections */}
-        <section id="experience" className="h-1" />
         <section id="skills" className="h-1" />
         <section id="projects" className="h-1" />
         <section id="certificates" className="h-1" />
