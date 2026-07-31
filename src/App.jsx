@@ -8,6 +8,7 @@ import Skills from "./components/Skills/Skills";
 import Projects from "./components/projects/Projects";
 import Certificates from "./components/Certificates/Certificates";
 import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
         <Certificates />
 
         <Contact />
+        
+        <Footer />
 
       </main>
     </Layout>
