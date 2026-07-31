@@ -1,6 +1,8 @@
 import { useCallback, useState } from "react";
 import Layout from "./components/Layout/Layout";
 import Welcome from "./components/Welcome/Welcome";
+import Navbar from "./components/Navbar/Navbar";
+import Hero from "./components/Hero/Hero";
 
 function App() {
   const [welcomeComplete, setWelcomeComplete] = useState(false);
@@ -16,21 +18,23 @@ function App() {
       )}
 
       {welcomeComplete && (
-        <main className="min-h-screen flex items-center justify-center px-6">
-          <div className="text-center">
-            <p className="mb-4 text-sm uppercase tracking-[0.4em] text-violet-400">
-              Portfolio
-            </p>
+        <>
+          <Navbar />
 
-            <h1 className="text-5xl font-black tracking-tight sm:text-7xl">
-              Diksha Pandey
-            </h1>
+          <main>
+            <Hero />
 
-            <p className="mt-5 text-lg text-slate-400">
-              Full Stack Developer
-            </p>
-          </div>
-        </main>
+            {/* Temporary section anchors.
+                These will be replaced by the real sections later. */}
+
+            <section id="about" className="h-1" />
+            <section id="experience" className="h-1" />
+            <section id="skills" className="h-1" />
+            <section id="projects" className="h-1" />
+            <section id="certificates" className="h-1" />
+            <section id="contact" className="h-1" />
+          </main>
+        </>
       )}
     </Layout>
   );

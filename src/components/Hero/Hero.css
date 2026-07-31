@@ -1,0 +1,129 @@
+.hero-section {
+  isolation: isolate;
+}
+
+.hero-title {
+  max-width: 850px;
+
+  font-size: clamp(4rem, 9vw, 8.5rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.075em;
+
+  color: white;
+
+  text-shadow:
+    0 0 60px rgba(139, 92, 246, 0.08);
+}
+
+.hero-title span {
+  background: linear-gradient(
+    110deg,
+    #a78bfa 0%,
+    #c084fc 35%,
+    #67e8f9 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  filter: drop-shadow(
+    0 0 25px rgba(139, 92, 246, 0.18)
+  );
+}
+
+.hero-primary-button {
+  position: relative;
+  overflow: hidden;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(139, 92, 246, 0.95),
+      rgba(168, 85, 247, 0.8)
+    );
+
+  box-shadow:
+    0 10px 35px rgba(139, 92, 246, 0.18);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+}
+
+.hero-primary-button::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 80%
+  );
+
+  transform: translateX(-120%);
+
+  transition: transform 0.7s ease;
+}
+
+.hero-primary-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 15px 45px rgba(139, 92, 246, 0.3);
+
+  filter: brightness(1.08);
+}
+
+.hero-primary-button:hover::before {
+  transform: translateX(120%);
+}
+
+.hero-social:hover {
+  transform: translateY(-3px);
+}
+
+.hero-image-glow {
+  background:
+    radial-gradient(
+      circle,
+      rgba(139, 92, 246, 0.22) 0%,
+      rgba(139, 92, 246, 0.08) 35%,
+      transparent 70%
+    );
+
+  filter: blur(30px);
+
+  animation: heroGlow 5s ease-in-out infinite;
+}
+
+@keyframes heroGlow {
+  0%,
+  100% {
+    transform: scale(0.92);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: clamp(3.8rem, 18vw, 6rem);
+    letter-spacing: -0.08em;
+  }
+
+  .hero-section {
+    padding-top: 8rem;
+  }
+}
