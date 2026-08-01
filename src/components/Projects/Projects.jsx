@@ -14,21 +14,18 @@ function Projects() {
       id="projects"
       className="projects-section relative overflow-hidden px-6 py-28 sm:px-10 lg:px-16"
     >
-      {/* Background glows */}
       <div className="projects-glow projects-glow-one" />
       <div className="projects-glow projects-glow-two" />
 
       <div className="relative z-10 mx-auto max-w-7xl">
 
-        {/* =====================================================
-            SECTION HEADING
-        ===================================================== */}
+        {/* Heading */}
 
         <motion.div
           initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          transition={{ duration: .7 }}
           className="mb-16"
         >
           <p className="projects-eyebrow">
@@ -36,236 +33,202 @@ function Projects() {
           </p>
 
           <h2 className="projects-heading">
-            Things I&apos;ve
+            Things I've
             <span> built.</span>
           </h2>
 
           <p className="mt-5 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">
-            A collection of projects where I&apos;ve applied my
-            development skills to build practical, interactive,
-            and user-focused solutions.
+            A collection of projects where I've transformed ideas into practical,
+            responsive and interactive applications while continuously improving
+            my full stack development skills.
           </p>
         </motion.div>
 
-
-        {/* =====================================================
-            PROJECT LIST
-        ===================================================== */}
-
         <div className="projects-list">
 
-          {projectsData.map((project, index) => {
-            const firstImage = project.images?.[0];
+          {projectsData.map((project, index) => (
 
-            return (
-              <motion.article
-                key={project.id}
-                className={`project-card ${
-                  index % 2 !== 0
-                    ? "project-card-reverse"
-                    : ""
-                }`}
-                initial={{
-                  opacity: 0,
-                  y: 50,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                viewport={{
-                  once: true,
-                  amount: 0.15,
-                }}
-                transition={{
-                  duration: 0.7,
-                  delay: index * 0.08,
-                }}
-              >
+            <motion.article
+              key={project.id}
+              className={`project-card ${
+                index % 2 ? "project-card-reverse" : ""
+              }`}
+              initial={{
+                opacity:0,
+                y:50
+              }}
+              whileInView={{
+                opacity:1,
+                y:0
+              }}
+              viewport={{
+                once:true,
+                amount:.2
+              }}
+              transition={{
+                duration:.7,
+                delay:index*.08
+              }}
+            >
 
-                {/* =================================================
-                    PROJECT IMAGE
-                ================================================= */}
+              {/* IMAGE */}
 
-                <div className="project-image-wrapper">
+              <div className="project-image-wrapper">
 
-                  {firstImage ? (
-                    <div className="project-image-container">
+                {project.images?.length ? (
+
+                  <div className="project-image-container">
+
+                    {/* FIRST IMAGE */}
+
+                    <img
+                      src={project.images[0]}
+                      alt={project.title}
+                      className="project-image project-image-front"
+                    />
+
+                    {/* SECOND IMAGE */}
+
+                    {project.images[1] && (
 
                       <img
-                        src={firstImage}
-                        alt={`${project.title} project preview`}
-                        className="project-image"
-                        loading={
-                          index === 0
-                            ? "eager"
-                            : "lazy"
-                        }
+                        src={project.images[1]}
+                        alt={project.title}
+                        className="project-image project-image-back"
                       />
 
-                      <div className="project-image-overlay" />
+                    )}
 
-                      <div className="project-image-number">
-                        {String(index + 1).padStart(2, "0")}
-                      </div>
+                    <div className="project-image-overlay"/>
 
-                      <div className="project-image-view">
-                        <ArrowUpRight size={20} />
-                      </div>
-
+                    <div className="project-image-number">
+                      {String(index+1).padStart(2,"0")}
                     </div>
-                  ) : (
-                    <div className="project-image-placeholder">
 
-                      <Layers3 size={42} />
-
-                      <span>
-                        Project Preview
-                      </span>
-
+                    <div className="project-image-view">
+                      <ArrowUpRight size={20}/>
                     </div>
+
+                  </div>
+
+                ) : (
+
+                  <div className="project-image-placeholder">
+
+                    <Layers3 size={40}/>
+
+                    <span>Preview</span>
+
+                  </div>
+
+                )}
+
+              </div>
+
+
+              {/* CONTENT */}
+
+              <div className="project-content">
+
+                <div className="project-meta">
+
+                  <span>{project.category}</span>
+
+                  {project.featured && (
+
+                    <span className="project-featured">
+                      Featured
+                    </span>
+
                   )}
 
                 </div>
 
+                <h3 className="project-title">
+                  {project.title}
+                </h3>
 
-                {/* =================================================
-                    PROJECT CONTENT
-                ================================================= */}
+                <p className="project-description">
+                  {project.description}
+                </p>
 
-                <div className="project-content">
+                <div className="project-technologies">
 
-                  {/* Category */}
-
-                  <div className="project-meta">
-
-                    <span>
-                      {project.category}
+                  {project.technologies.map((tech)=>(
+                    <span
+                      key={tech}
+                      className="project-tech"
+                    >
+                      {tech}
                     </span>
-
-                    {project.featured && (
-                      <span className="project-featured">
-                        Featured
-                      </span>
-                    )}
-
-                  </div>
-
-
-                  {/* Title */}
-
-                  <h3 className="project-title">
-                    {project.title}
-                  </h3>
-
-
-                  {/* Description */}
-
-                  <p className="project-description">
-                    {project.description}
-                  </p>
-
-
-                  {/* Technologies */}
-
-                  <div className="project-technologies">
-
-                    {project.technologies.map(
-                      (technology) => (
-                        <span
-                          key={technology}
-                          className="project-tech"
-                        >
-                          {technology}
-                        </span>
-                      )
-                    )}
-
-                  </div>
-
-
-                  {/* =================================================
-                      PROJECT BUTTONS
-                  ================================================= */}
-
-                  <div className="project-actions">
-
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="project-button project-button-primary"
-                      >
-                        <Code2 size={16} />
-
-                        GitHub
-
-                        <ArrowUpRight size={15} />
-                      </a>
-                    )}
-
-
-                    {project.demo && (
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="project-button project-button-secondary"
-                      >
-                        <ExternalLink size={16} />
-
-                        Live Demo
-                      </a>
-                    )}
-
-                  </div>
+                  ))}
 
                 </div>
 
-              </motion.article>
-            );
-          })}
+                <div className="project-actions">
+
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="project-button project-button-primary"
+                  >
+                    <Code2 size={16}/>
+                    GitHub
+                  </a>
+
+                  {project.demo && (
+
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="project-button project-button-secondary"
+                    >
+                      <ExternalLink size={16}/>
+                      Live Demo
+                    </a>
+
+                  )}
+
+                </div>
+
+              </div>
+
+            </motion.article>
+
+          ))}
 
         </div>
 
-
-        {/* =====================================================
-            BOTTOM MESSAGE
-        ===================================================== */}
-
         <motion.div
+          className="projects-bottom-card"
           initial={{
-            opacity: 0,
-            y: 25,
+            opacity:0,
+            y:30
           }}
           whileInView={{
-            opacity: 1,
-            y: 0,
+            opacity:1,
+            y:0
           }}
           viewport={{
-            once: true,
+            once:true
           }}
-          transition={{
-            duration: 0.6,
-          }}
-          className="projects-bottom-card"
         >
 
           <div className="projects-bottom-icon">
-            <Layers3 size={19} />
+            <Layers3 size={18}/>
           </div>
 
           <div>
 
             <p className="projects-bottom-title">
-              Always building something new.
+              Always Building Something New
             </p>
 
             <p className="projects-bottom-text">
-              I enjoy turning ideas into practical applications
-              while continuously learning new technologies and
-              improving my development skills.
+              I enjoy experimenting with modern technologies and continuously
+              improving my development skills through real-world projects.
             </p>
 
           </div>
@@ -273,6 +236,7 @@ function Projects() {
         </motion.div>
 
       </div>
+
     </section>
   );
 }

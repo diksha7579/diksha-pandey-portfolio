@@ -1,226 +1,273 @@
 import { motion } from "framer-motion";
-import {
-  ArrowUpRight,
-  Award,
-  ExternalLink,
-} from "lucide-react";
+import { Award, ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useState } from "react";
+
 import certificatesData from "../../data/certificatesData";
+import CertificateModal from "./CertificateModal";
+
 import "./Certificates.css";
 
 function Certificates() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  /* =========================================================
+     AUTO PLAY
+  ========================================================= */
+
+  useEffect(() => {
+    if (isHovered || selectedCertificate) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) =>
+        prev === certificatesData.length - 1
+          ? 0
+          : prev + 1
+      );
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [isHovered, selectedCertificate]);
+
+  /* =========================================================
+     NAVIGATION
+  ========================================================= */
+
+  const nextCertificate = () => {
+    const nextIndex =
+      currentIndex === certificatesData.length - 1
+        ? 0
+        : currentIndex + 1;
+
+    setCurrentIndex(nextIndex);
+
+    if (selectedCertificate) {
+      setSelectedCertificate(certificatesData[nextIndex]);
+    }
+  };
+
+  const previousCertificate = () => {
+    const previousIndex =
+      currentIndex === 0
+        ? certificatesData.length - 1
+        : currentIndex - 1;
+
+    setCurrentIndex(previousIndex);
+
+    if (selectedCertificate) {
+      setSelectedCertificate(certificatesData[previousIndex]);
+    }
+  };
+
+  /* =========================================================
+     MODAL
+  ========================================================= */
+
+  const openCertificate = (certificate) => {
+    const index = certificatesData.findIndex(
+      (item) => item.id === certificate.id
+    );
+
+    setCurrentIndex(index);
+    setSelectedCertificate(certificatesData[index]);
+  };
+
+  const closeCertificate = () => {
+    setSelectedCertificate(null);
+  };
+
   return (
     <section
       id="certificates"
       className="certificates-section relative overflow-hidden px-6 py-28 sm:px-10 lg:px-16"
     >
-      {/* Background effects */}
       <div className="certificates-glow certificates-glow-one" />
       <div className="certificates-glow certificates-glow-two" />
 
       <div className="relative z-10 mx-auto max-w-7xl">
 
-        {/* =====================================================
-            SECTION HEADING
-        ===================================================== */}
+        {/* ===================== Heading ===================== */}
 
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 35,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.25,
-          }}
-          transition={{
-            duration: 0.7,
-          }}
-          className="mb-16"
+          className="certificates-header"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
         >
           <p className="certificates-eyebrow">
-            05 / CERTIFICATES
+            05 / CERTIFICATIONS
           </p>
 
           <h2 className="certificates-heading">
-            Proof of my
-            <span> learning.</span>
+            Professional
+            <span> Credentials.</span>
           </h2>
 
-          <p className="mt-5 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">
-            Certifications and learning milestones that reflect my
-            continuous growth across full-stack development,
-            databases, networking, AI, and computer science.
+          <p className="certificates-description">
+            A curated collection of certifications that reflect my
+            continuous learning journey in software development,
+            programming, networking, databases and emerging
+            technologies.
           </p>
         </motion.div>
 
+        {/* ===================== Showcase ===================== */}
 
-        {/* =====================================================
-            FEATURED CERTIFICATES
-        ===================================================== */}
+        <div className="certificate-showcase">
 
-        <div className="certificates-grid">
+          {/* LEFT PANEL */}
 
-          {certificatesData.map((certificate, index) => (
-            <motion.article
-              key={certificate.id}
-              className={`certificate-card ${
-                certificate.featured
-                  ? "certificate-card-featured"
-                  : ""
-              }`}
-              initial={{
-                opacity: 0,
-                y: 45,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.12,
-              }}
-              transition={{
-                duration: 0.6,
-                delay: Math.min(index * 0.05, 0.35),
-              }}
-              whileHover={{
-                y: -7,
-              }}
-            >
+          <motion.div
+            className="certificate-info"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <div className="certificate-count">
 
-              {/* =================================================
-                  IMAGE
-              ================================================= */}
+              <Award size={28} />
 
-              <div className="certificate-image-wrapper">
+              <div>
+                <strong>{certificatesData.length}</strong>
 
-                <img
-                  src={certificate.image}
-                  alt={`${certificate.title} certificate`}
-                  className="certificate-image"
-                  loading={index < 4 ? "eager" : "lazy"}
-                />
-
-                <div className="certificate-image-overlay" />
-
-                <div className="certificate-number">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
-
-                <div className="certificate-award-icon">
-                  <Award size={17} />
-                </div>
-
+                <span>Professional Certificates</span>
               </div>
 
+            </div>
 
-              {/* =================================================
-                  CONTENT
-              ================================================= */}
+            <div className="certificate-active-info">
 
-              <div className="certificate-content">
+              <span className="certificate-category-tag">
+                {certificatesData[currentIndex].category}
+              </span>
 
-                <div className="certificate-category">
-                  {certificate.category}
-                </div>
+              <h3>
+                {certificatesData[currentIndex].title}
+              </h3>
 
-                <h3 className="certificate-title">
-                  {certificate.title}
-                </h3>
+              <h4>
+                {certificatesData[currentIndex].subtitle}
+              </h4>
 
-                <p className="certificate-organization">
-                  {certificate.organization}
-                </p>
+              <p>
+                {certificatesData[currentIndex].description}
+              </p>
 
+            </div>
 
-                {/* Bottom action */}
+            <div className="certificate-controls">
 
-                <div className="certificate-footer">
+              <button onClick={previousCertificate}>
+                <ChevronLeft size={20} />
+              </button>
 
-                  <span className="certificate-verified">
-                    <span className="certificate-dot" />
-                    Certified
-                  </span>
+              <button onClick={nextCertificate}>
+                <ChevronRight size={20} />
+              </button>
 
-                  <button
-                    type="button"
-                    className="certificate-view-button"
-                    onClick={() =>
-                      window.open(
-                        certificate.image,
-                        "_blank",
-                        "noopener,noreferrer"
-                      )
+            </div>
+
+          </motion.div>
+
+          {/* RIGHT PANEL */}
+
+          <motion.div
+            className="certificate-stack"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+
+            {certificatesData.map((certificate, index) => {
+
+              const offset =
+                (index - currentIndex + certificatesData.length) %
+                certificatesData.length;
+
+              return (
+
+                <motion.div
+                  key={certificate.id}
+                  className="certificate-card"
+
+                  animate={{
+                    y: offset * 22,
+                    scale: 1 - offset * 0.05,
+                    rotateZ: offset * 1.2,
+                    opacity: offset > 4 ? 0 : 1,
+                  }}
+
+                  style={{
+                    zIndex:
+                      certificatesData.length - offset,
+                  }}
+
+                  whileHover={{
+                    y: offset * 22 - 12,
+                    scale: 1.04,
+                    rotateZ: 0,
+                  }}
+
+                  transition={{
+                    type: "spring",
+                    stiffness: 180,
+                    damping: 22,
+                  }}
+
+                  onClick={() =>
+                    openCertificate(certificate)
+                  }
+                >
+
+                  <img
+                    src={certificate.image}
+                    alt={certificate.title}
+                    loading={
+                      index === 0
+                        ? "eager"
+                        : "lazy"
                     }
-                    aria-label={`View ${certificate.title} certificate`}
-                  >
-                    View
-                    <ArrowUpRight size={14} />
-                  </button>
+                  />
 
-                </div>
+                  <div className="certificate-card-overlay">
 
-              </div>
+                    <span>
+                      {certificate.issuer}
+                    </span>
 
-            </motion.article>
-          ))}
+                    <h4>
+                      {certificate.title}
+                    </h4>
+
+                  </div>
+
+                </motion.div>
+
+              );
+            })}
+
+          </motion.div>
 
         </div>
 
-
-        {/* =====================================================
-            BOTTOM MESSAGE
-        ===================================================== */}
-
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 25,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.6,
-          }}
-          className="certificates-learning-card"
-        >
-
-          <div className="certificates-learning-icon">
-            <Award size={19} />
-          </div>
-
-          <div>
-
-            <p className="certificates-learning-title">
-              Always learning. Always improving.
-            </p>
-
-            <p className="certificates-learning-text">
-              These certifications represent my commitment to
-              continuously developing my technical knowledge and
-              applying what I learn through practical projects.
-            </p>
-
-          </div>
-
-          <ExternalLink
-            size={17}
-            className="certificates-learning-arrow"
-          />
-
-        </motion.div>
-
       </div>
+
+      <CertificateModal
+        isOpen={Boolean(selectedCertificate)}
+        certificate={selectedCertificate}
+        certificates={certificatesData}
+        currentIndex={currentIndex}
+        onClose={closeCertificate}
+        onPrevious={previousCertificate}
+        onNext={nextCertificate}
+      />
+
     </section>
   );
 }

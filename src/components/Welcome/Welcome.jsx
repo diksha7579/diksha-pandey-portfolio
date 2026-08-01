@@ -56,7 +56,7 @@ function Welcome({ onComplete }) {
   useEffect(() => {
     if (!showIntro) {
       const completeTimer = setTimeout(() => {
-        onComplete();
+        onComplete?.();
       }, 1000);
 
       return () => clearTimeout(completeTimer);

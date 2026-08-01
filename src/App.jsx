@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Layout from "./components/Layout/Layout";
 import Welcome from "./components/Welcome/Welcome";
 import Navbar from "./components/Navbar/Navbar";
@@ -9,32 +11,44 @@ import Projects from "./components/projects/Projects";
 import Certificates from "./components/Certificates/Certificates";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
+import Education from "./components/Education/Education";
 
 function App() {
+  const [showWelcome, setShowWelcome] = useState(true);
+
   return (
     <Layout>
-      <Welcome />
+      {showWelcome && (
+        <Welcome
+          onComplete={() => setShowWelcome(false)}
+        />
+      )}
 
-      <Navbar />
+      {!showWelcome && (
+        <>
+          <Navbar />
 
-      <main>
-        <Hero />
+          <main>
+            <Hero />
 
-        <About />
+            <About />
 
-        <Experience />
+            <Education />
 
-        <Skills />
+            <Experience />
 
-        <Projects />
+            <Skills />
 
-        <Certificates />
+            <Projects />
 
-        <Contact />
-        
-        <Footer />
+            <Certificates />
 
-      </main>
+            <Contact />
+
+            <Footer />
+          </main>
+        </>
+      )}
     </Layout>
   );
 }

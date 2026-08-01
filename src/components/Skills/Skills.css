@@ -74,7 +74,7 @@
   position: relative;
 
   width: 100%;
-  min-height: 790px;
+  min-height: 930px;
 
   overflow: hidden;
 
@@ -118,12 +118,7 @@
 
   height: 78px;
 
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(2, 6, 23, 0.35),
-      transparent
-    );
+  background: linear-gradient(to bottom, rgba(2, 6, 23, 0.35), transparent);
 
   pointer-events: none;
   z-index: 1;
@@ -146,13 +141,12 @@
 
   border-radius: 50%;
 
-  background:
-    radial-gradient(
-      circle,
-      rgba(168, 85, 247, 0.14) 0%,
-      rgba(139, 92, 246, 0.07) 25%,
-      transparent 70%
-    );
+  background: radial-gradient(
+    circle,
+    rgba(168, 85, 247, 0.14) 0%,
+    rgba(139, 92, 246, 0.07) 25%,
+    transparent 70%
+  );
 
   pointer-events: none;
   z-index: 0;
@@ -170,25 +164,25 @@
 
   transform: translate(-50%, -50%);
 
-  border: 1px solid rgba(139, 92, 246, 0.10);
+  border: 1px solid rgba(139, 92, 246, 0.1);
   border-radius: 50%;
 
   pointer-events: none;
 }
 
 .skills-orbit-one {
-  width: 310px;
-  height: 310px;
+  width: 250px;
+  height: 250px;
 }
 
 .skills-orbit-two {
-  width: 500px;
-  height: 500px;
+  width: 430px;
+  height: 430px;
 }
 
 .skills-orbit-three {
-  width: 690px;
-  height: 690px;
+  width: 620px;
+  height: 620px;
 }
 
 /* =========================================================
@@ -221,12 +215,11 @@
 
   border-radius: 50%;
 
-  background:
-    radial-gradient(
-      circle at 50% 40%,
-      rgba(139, 92, 246, 0.23),
-      rgba(15, 23, 42, 0.92) 65%
-    );
+  background: radial-gradient(
+    circle at 50% 40%,
+    rgba(139, 92, 246, 0.23),
+    rgba(15, 23, 42, 0.92) 65%
+  );
 
   border: 1px solid rgba(167, 139, 250, 0.24);
 
@@ -266,7 +259,7 @@
   width: 250px;
   height: 250px;
 
-  border: 1px dashed rgba(168, 85, 247, 0.10);
+  border: 1px dashed rgba(168, 85, 247, 0.1);
 }
 
 .skills-core-symbol {
@@ -285,8 +278,7 @@
 
   background: rgba(139, 92, 246, 0.12);
 
-  box-shadow:
-    0 0 25px rgba(139, 92, 246, 0.18);
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.18);
 }
 
 .skills-core span {
@@ -336,10 +328,10 @@
      78px top prevents cards from entering navbar space.
      28px on the other sides prevents edge clipping.
   */
-  top: 78px;
-  right: 28px;
-  bottom: 28px;
-  left: 28px;
+  top: 90px;
+  right: 45px;
+  bottom: 45px;
+  left: 45px;
 
   z-index: 5;
 
@@ -379,12 +371,11 @@
 
   border-radius: 15px;
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(30, 41, 59, 0.90),
-      rgba(15, 23, 42, 0.90)
-    );
+  background: linear-gradient(
+    135deg,
+    rgba(30, 41, 59, 0.9),
+    rgba(15, 23, 42, 0.9)
+  );
 
   box-shadow:
     0 12px 30px rgba(0, 0, 0, 0.22),
@@ -401,12 +392,11 @@
 .floating-skill:hover .floating-skill-inner {
   border-color: rgba(167, 139, 250, 0.45);
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(45, 35, 80, 0.96),
-      rgba(15, 23, 42, 0.96)
-    );
+  background: linear-gradient(
+    135deg,
+    rgba(45, 35, 80, 0.96),
+    rgba(15, 23, 42, 0.96)
+  );
 
   box-shadow:
     0 18px 38px rgba(0, 0, 0, 0.28),
@@ -429,8 +419,7 @@
 
   background: rgba(139, 92, 246, 0.11);
 
-  box-shadow:
-    inset 0 0 12px rgba(139, 92, 246, 0.08);
+  box-shadow: inset 0 0 12px rgba(139, 92, 246, 0.08);
 }
 
 .floating-skill span {
@@ -451,13 +440,12 @@
   width: 80%;
   height: 1px;
 
-  background:
-    linear-gradient(
-      to right,
-      transparent,
-      rgba(196, 181, 253, 0.35),
-      transparent
-    );
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(196, 181, 253, 0.35),
+    transparent
+  );
 
   opacity: 0;
 
@@ -481,8 +469,8 @@
 
 /* 1 React */
 .floating-skill:nth-child(1) {
-  left: 8%;
-  top: 6%;
+  left: 5%;
+  top: 9%;
 }
 
 /* 2 JavaScript */
@@ -493,8 +481,8 @@
 
 /* 3 HTML */
 .floating-skill:nth-child(3) {
-  right: 7%;
-  top: 7%;
+  right: 4%;
+  top: 11%;
 }
 
 /* 4 CSS */
@@ -524,7 +512,7 @@
 /* 8 Node.js */
 .floating-skill:nth-child(8) {
   right: 2%;
-  top: 41%;
+  top: 47%;
 }
 
 /* 9 MySQL */
@@ -560,7 +548,7 @@
 /* 14 GitHub */
 .floating-skill:nth-child(14) {
   right: 2%;
-  top: 23%;
+  top: 29%;
 }
 
 /* 15 Postman */
@@ -571,8 +559,8 @@
 
 /* 16 VS Code */
 .floating-skill:nth-child(16) {
-  right: 22%;
-  top: 38%;
+  left: 47%;
+  top: 18%;
 }
 
 /* 17 Figma */
@@ -583,8 +571,8 @@
 
 /* 18 Visual Studio */
 .floating-skill:nth-child(18) {
-  right: 27%;
-  top: 47%;
+  right: 32%;
+  top: 53%;
 }
 
 /* 19 IntelliJ IDEA */
@@ -595,8 +583,8 @@
 
 /* 20 Three.js */
 .floating-skill:nth-child(20) {
-  left: 51%;
-  top: 5%;
+  left: 48%;
+  top: 10%;
 }
 
 /* 21 GSAP */
@@ -619,26 +607,26 @@
 
 /* 24 React CountUp */
 .floating-skill:nth-child(24) {
-  right: 18%;
-  bottom: 27%;
+  right: 14%;
+  bottom: 22%;
 }
 
 /* 25 EmailJS */
 .floating-skill:nth-child(25) {
-  left: 38%;
-  bottom: 18%;
+  left: 33%;
+  bottom: 10%;
 }
 
 /* 26 Vite */
 .floating-skill:nth-child(26) {
-  right: 4%;
-  bottom: 37%;
+  left: 18%;
+  top: 12%;
 }
 
 /* 27 Swagger */
 .floating-skill:nth-child(27) {
-  left: 30%;
-  top: 10%;
+  left: 28%;
+  top: 18%;
 }
 
 /* =========================================================
@@ -697,12 +685,11 @@
 
   border-radius: 18px;
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(139, 92, 246, 0.055),
-      rgba(15, 23, 42, 0.45)
-    );
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.055),
+    rgba(15, 23, 42, 0.45)
+  );
 }
 
 .skills-learning-icon {
@@ -719,7 +706,7 @@
 
   color: #a78bfa;
 
-  background: rgba(139, 92, 246, 0.10);
+  background: rgba(139, 92, 246, 0.1);
 }
 
 /* =========================================================
@@ -744,21 +731,22 @@
   }
 
   .skills-core {
-    width: 175px;
-    height: 175px;
+    width: 165px;
+    height: 165px;
   }
 
   .floating-skill-inner {
-    min-height: 48px;
     padding: 8px 11px;
+    min-height: 46px;
   }
 
   .floating-skill {
     min-width: 108px;
+    max-width: 132px;
   }
 
   .floating-skill span {
-    font-size: 0.66rem;
+    font-size: 0.67rem;
   }
 
   .floating-skill-icon {
@@ -815,13 +803,13 @@
   }
 
   .skills-core-ring-one {
-    width: 180px;
-    height: 180px;
+    width: 190px;
+    height: 190px;
   }
 
   .skills-core-ring-two {
-    width: 205px;
-    height: 205px;
+    width: 225px;
+    height: 225px;
   }
 
   .floating-skills-container {

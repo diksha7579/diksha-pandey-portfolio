@@ -1,112 +1,173 @@
-import javaFullStack from "../assets/images/certificates/JavaFullStack Certificate.jpg";
-import ibm from "../assets/images/certificates/IBM Certificate.jpg";
-import infosys from "../assets/images/certificates/Infosys Certificate.jpg";
-import microsoft from "../assets/images/certificates/Microsoft Certificate.jpg";
-import sql from "../assets/images/certificates/SQL Certification.jpg";
-import network from "../assets/images/certificates/Network certificate.jpg";
-import dataScience from "../assets/images/certificates/Data Science Certificate.jpg";
-import cyber from "../assets/images/certificates/Cyber Certificate.jpg";
-import nptel from "../assets/images/certificates/NPTEL Certificate.jpg";
-import algorithms from "../assets/images/certificates/ALGO Certificate.jpg";
-import leetcode from "../assets/images/certificates/50days leetcode.jpg";
-import greatLearning from "../assets/images/certificates/GreatLearning Certificate.jpg";
-
 const certificatesData = [
   {
     id: 1,
-    title: "Java Full Stack Development",
-    organization: "AICTE",
-    category: "Full Stack Development",
-    image: javaFullStack,
+    title: "IBM SkillBuild",
+    subtitle: "Web Development Fundamentals",
+    issuer: "IBM",
+    year: "2025",
+    category: "Web Development",
     featured: true,
+    image: "/src/assets/images/certificates/IBM Certificate.jpg",
+    credential: "",
+    description:
+      "Successfully completed IBM SkillBuild training focused on modern web development concepts, responsive websites, HTML, CSS, JavaScript and frontend best practices.",
   },
+
   {
     id: 2,
-    title: "Web Development",
-    organization: "IBM SkillsBuild",
-    category: "Web Development",
-    image: ibm,
+    title: "Java Full Stack",
+    subtitle: "Java Full Stack Developer",
+    issuer: "AICTE",
+    year: "2024",
+    category: "Full Stack",
     featured: true,
+    image: "/src/assets/images/certificates/JavaFullStack Certificate.jpg",
+    credential: "",
+    description:
+      "Completed Java Full Stack Developer virtual internship covering Java, Spring Boot, Hibernate, MySQL, HTML, CSS, JavaScript and Git.",
   },
+
+
+
   {
     id: 3,
-    title: "Website Development",
-    organization: "Infosys Springboard",
+    title: "Infosys Springboard",
+    subtitle: "Web Development",
+    issuer: "Infosys",
+    year: "2024",
     category: "Web Development",
-    image: infosys,
-    featured: true,
+    featured: false,
+    image: "/src/assets/images/certificates/Infosys Certificate.jpg",
+    credential: "",
+    description:
+      "Completed web development training through Infosys Springboard focusing on responsive design and frontend technologies.",
   },
+
   {
     id: 4,
-    title: "Career Essentials in Generative AI",
-    organization: "Microsoft",
-    category: "Artificial Intelligence",
-    image: microsoft,
+    title: "Microsoft",
+    subtitle: "Website Development",
+    issuer: "Microsoft",
+    year: "2024",
+    category: "Web Development",
     featured: true,
+    image: "/src/assets/images/certificates/Microsoft Certificate.jpg",
+    credential: "",
+    description:
+      "Successfully completed Website Development training provided by Microsoft covering modern frontend development practices.",
   },
+
+
   {
     id: 5,
-    title: "SQL Certification",
-    organization: "SQL",
-    category: "Database",
-    image: sql,
-    featured: true,
+    title: "Data Science",
+    subtitle: "Data Science Foundation",
+    issuer: "Wipro",
+    year: "2025",
+    category: "Data Science",
+    featured: false,
+    image: "/src/assets/images/certificates/Data Science Certificate.jpg",
+    credential: "",
+    description:
+      "Completed introductory Data Science certification covering analytics, data processing and machine learning fundamentals.",
   },
+
   {
     id: 6,
-    title: "Networking / CCNA",
-    organization: "Cisco",
-    category: "Networking",
-    image: network,
+    title: "SQL Certification",
+    subtitle: "Database Management",
+    issuer: "SQL",
+    year: "2024",
+    category: "Database",
     featured: false,
+    image: "/src/assets/images/certificates/SQL Certification.jpg",
+    credential: "",
+    description:
+      "Learned SQL queries, joins, normalization, indexing and database management concepts.",
   },
+
   {
     id: 7,
-    title: "Data Science",
-    organization: "Wipro",
-    category: "Data Science",
-    image: dataScience,
+    title: "NPTEL",
+    subtitle: "Compiler Design",
+    issuer: "NPTEL",
+    year: "2025",
+    category: "Computer Science",
     featured: false,
+    image: "/src/assets/images/certificates/NPTEL Certificate.jpg",
+    credential: "",
+    description:
+      "Successfully completed NPTEL Compiler Design course covering lexical analysis, parsing and compiler fundamentals.",
   },
+
   {
     id: 8,
-    title: "Cybersecurity",
-    organization: "Eduskills",
-    category: "Cybersecurity",
-    image: cyber,
+    title: "Cisco Networking",
+    subtitle: "Networking Fundamentals",
+    issuer: "Cisco",
+    year: "2024",
+    category: "Networking",
     featured: false,
+    image: "/src/assets/images/certificates/Network certificate.jpg",
+    credential: "",
+    description:
+      "Completed Cisco networking fundamentals covering networking concepts and communication protocols.",
   },
+
   {
     id: 9,
-    title: "Compiler Design",
-    organization: "NPTEL",
-    category: "Computer Science",
-    image: nptel,
+    title: "Cyber Security",
+    subtitle: "Cyber Security Essentials",
+    issuer: "EduSkills",
+    year: "2023",
+    category: "Cyber Security",
     featured: false,
+    image: "/src/assets/images/certificates/Cyber Certificate.jpg",
+    credential: "",
+    description:
+      "Learned cybersecurity fundamentals including threats, vulnerabilities and secure computing practices.",
   },
+
   {
     id: 10,
-    title: "Algorithms",
-    organization: "Technical Certification",
-    category: "Problem Solving",
-    image: algorithms,
+    title: "Great Learning",
+    subtitle: "Artificial Intelligence",
+    issuer: "Great Learning",
+    year: "2024",
+    category: "Artificial Intelligence",
     featured: false,
+    image: "/src/assets/images/certificates/GreatLearning Certificate.jpg",
+    credential: "",
+    description:
+      "Completed introductory Artificial Intelligence certification covering AI concepts and practical applications.",
   },
+
   {
     id: 11,
-    title: "50 Days of LeetCode",
-    organization: "LeetCode",
-    category: "Problem Solving",
-    image: leetcode,
+    title: "Problem Based Learning",
+    subtitle: "Academic Project",
+    issuer: "University",
+    year: "2024",
+    category: "Academic",
     featured: false,
+    image: "/src/assets/images/certificates/ALGO Certificate.jpg",
+    credential: "",
+    description:
+      "Successfully completed project-based learning activities focused on software engineering and teamwork.",
   },
+
   {
     id: 12,
-    title: "Introduction to AI",
-    organization: "Great Learning",
-    category: "Artificial Intelligence",
-    image: greatLearning,
+    title: "50 Days Challenge",
+    subtitle: "Programming Practice",
+    issuer: "LeetCode",
+    year: "2025",
+    category: "Programming",
     featured: false,
+    image: "/src/assets/images/certificates/50days leetcode.jpg",
+    credential: "",
+    description:
+      "Successfully completed a continuous coding challenge demonstrating consistency in problem solving and algorithm practice.",
   },
 ];
 

@@ -1,9 +1,4 @@
-import {
-  motion,
-  useMotionValue,
-  useSpring,
-  useTransform,
-} from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import {
   Atom,
   Braces,
@@ -134,11 +129,9 @@ function Skills() {
 
     const rect = playgroundRef.current.getBoundingClientRect();
 
-    const x =
-      ((event.clientX - rect.left) / rect.width) * 100;
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
 
-    const y =
-      ((event.clientY - rect.top) / rect.height) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
 
     spotlightX.set(x);
     spotlightY.set(y);
@@ -343,9 +336,7 @@ function Skills() {
     },
   ];
 
-  const allSkills = skillGroups.flatMap(
-    (group) => group.skills
-  );
+  const allSkills = skillGroups.flatMap((group) => group.skills);
 
   return (
     <section
@@ -356,7 +347,6 @@ function Skills() {
       <div className="skills-glow skills-glow-two" />
 
       <div className="relative z-10 mx-auto max-w-7xl">
-
         {/* SECTION HEADING */}
         <motion.div
           initial={{
@@ -376,18 +366,16 @@ function Skills() {
           }}
           className="mb-14"
         >
-          <p className="skills-eyebrow">
-            03 / SKILLS
-          </p>
+          <p className="skills-eyebrow">03 / SKILLS</p>
 
           <h2 className="skills-heading">
-            See what I
-            <span> know.</span>
+            Tech
+            <span> Arsenal.</span>
           </h2>
 
           <p className="mt-5 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">
-            Explore the technologies I use to build modern,
-            interactive and user-focused digital experiences.
+            Explore the technologies I use to build modern, interactive and
+            user-focused digital experiences.
           </p>
         </motion.div>
 
@@ -446,11 +434,10 @@ function Skills() {
               <Code2 size={30} />
             </motion.div>
 
-            <span>MY</span>
+            <span>TECH</span>
 
-            <strong>SKILLS</strong>
+            <strong>ARSENAL</strong>
 
-            <small>FULL STACK</small>
           </motion.div>
 
           {/* ALL SKILLS */}
@@ -487,15 +474,10 @@ function Skills() {
             const GroupIcon = group.icon;
 
             return (
-              <div
-                key={group.title}
-                className="skills-category-item"
-              >
+              <div key={group.title} className="skills-category-item">
                 <GroupIcon size={15} />
 
-                <span>
-                  {group.title}
-                </span>
+                <span>{group.title}</span>
               </div>
             );
           })}
@@ -529,13 +511,12 @@ function Skills() {
             </p>
 
             <p className="mt-2 text-sm leading-7 text-slate-400">
-              This portfolio itself is a hands-on project where I am
-              learning and applying modern React animation, 3D,
-              interaction, and UI technologies.
+              This portfolio itself is a hands-on project where I am learning
+              and applying modern React animation, 3D, interaction, and UI
+              technologies.
             </p>
           </div>
         </motion.div>
-
       </div>
     </section>
   );

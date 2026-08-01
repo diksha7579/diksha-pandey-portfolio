@@ -652,3 +652,239 @@
     min-height: 125px;
   }
 }
+
+/* =========================================================
+   COPY BUTTON
+========================================================= */
+
+.copy-button{
+display:flex;
+align-items:center;
+justify-content:center;
+
+width:38px;
+height:38px;
+
+border:none;
+outline:none;
+
+cursor:pointer;
+
+border-radius:12px;
+
+background:rgba(255,255,255,.05);
+
+color:#cbd5e1;
+
+transition:.3s;
+}
+
+.copy-button:hover{
+
+background:#8b5cf6;
+
+color:white;
+
+transform:translateY(-2px);
+
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.contact-success{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+margin-top:18px;
+
+padding:14px 18px;
+
+border-radius:14px;
+
+background:rgba(16,185,129,.12);
+
+border:1px solid rgba(16,185,129,.35);
+
+color:#6ee7b7;
+
+font-size:.9rem;
+
+animation:fadeUp .45s ease;
+
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+========================================================= */
+
+.contact-error{
+
+margin-top:18px;
+
+padding:14px 18px;
+
+border-radius:14px;
+
+background:rgba(239,68,68,.12);
+
+border:1px solid rgba(239,68,68,.35);
+
+color:#fca5a5;
+
+font-size:.9rem;
+
+animation:fadeUp .45s ease;
+
+}
+
+
+/* =========================================================
+   SPINNER
+========================================================= */
+
+.contact-spinner{
+
+animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+
+/* =========================================================
+   COPIED TOAST
+========================================================= */
+
+.copied-toast{
+
+position:fixed;
+
+right:35px;
+
+bottom:35px;
+
+z-index:9999;
+
+padding:14px 22px;
+
+border-radius:16px;
+
+background:#8b5cf6;
+
+color:white;
+
+font-weight:600;
+
+box-shadow:
+
+0 20px 45px rgba(139,92,246,.35);
+
+animation:fadeUp .35s ease;
+
+}
+
+
+/* =========================================================
+   SEND BUTTON
+========================================================= */
+
+.contact-submit{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+width:100%;
+
+height:56px;
+
+border:none;
+
+cursor:pointer;
+
+border-radius:16px;
+
+background:linear-gradient(
+135deg,
+#8b5cf6,
+#6d28d9
+);
+
+color:white;
+
+font-weight:700;
+
+font-size:.95rem;
+
+transition:.35s;
+
+}
+
+.contact-submit:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 18px 40px rgba(139,92,246,.35);
+
+}
+
+.contact-submit:disabled{
+
+cursor:not-allowed;
+
+opacity:.75;
+
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(15px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
