@@ -78,7 +78,7 @@ function Education() {
 
           {
 
-            educationData.map((item,index)=>(
+            EducationData.map((item,index)=>(
 
               <motion.div
 
