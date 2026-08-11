@@ -51,9 +51,9 @@ function Footer() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
 
-        {/* =====================================================
+        {/* 
             MAIN FOOTER
-        ===================================================== */}
+        */}
 
         <div className="footer-main">
 
@@ -185,9 +185,9 @@ function Footer() {
         </div>
 
 
-        {/* =====================================================
+        {/* 
             FOOTER BOTTOM
-        ===================================================== */}
+         */}
 
         <div className="footer-bottom">
 

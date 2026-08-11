@@ -17,7 +17,7 @@ function Hero() {
   const socialLinks = [
     {
       label: "GitHub",
-      href: "https://github.com/diksha22scfksp",
+      href: "https://github.com/diksha7579",
       icon: FaGithub,
     },
     {

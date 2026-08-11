@@ -201,40 +201,6 @@ function Projects() {
 
         </div>
 
-        <motion.div
-          className="projects-bottom-card"
-          initial={{
-            opacity:0,
-            y:30
-          }}
-          whileInView={{
-            opacity:1,
-            y:0
-          }}
-          viewport={{
-            once:true
-          }}
-        >
-
-          <div className="projects-bottom-icon">
-            <Layers3 size={18}/>
-          </div>
-
-          <div>
-
-            <p className="projects-bottom-title">
-              Always Building Something New
-            </p>
-
-            <p className="projects-bottom-text">
-              I enjoy experimenting with modern technologies and continuously
-              improving my development skills through real-world projects.
-            </p>
-
-          </div>
-
-        </motion.div>
-
       </div>
 
     </section>

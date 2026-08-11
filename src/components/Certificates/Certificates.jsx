@@ -12,9 +12,7 @@ function Certificates() {
   const [selectedCertificate, setSelectedCertificate] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
 
-  /* =========================================================
-     AUTO PLAY
-  ========================================================= */
+  /* AUTO PLAY */
 
   useEffect(() => {
     if (isHovered || selectedCertificate) return;
@@ -30,9 +28,7 @@ function Certificates() {
     return () => clearInterval(interval);
   }, [isHovered, selectedCertificate]);
 
-  /* =========================================================
-     NAVIGATION
-  ========================================================= */
+  /* NAVIGATION */
 
   const nextCertificate = () => {
     const nextIndex =
@@ -60,9 +56,7 @@ function Certificates() {
     }
   };
 
-  /* =========================================================
-     MODAL
-  ========================================================= */
+  /* MODAL */
 
   const openCertificate = (certificate) => {
     const index = certificatesData.findIndex(
@@ -87,7 +81,7 @@ function Certificates() {
 
       <div className="relative z-10 mx-auto max-w-7xl">
 
-        {/* ===================== Heading ===================== */}
+        {/*  Heading  */}
 
         <motion.div
           className="certificates-header"
@@ -113,7 +107,7 @@ function Certificates() {
           </p>
         </motion.div>
 
-        {/* ===================== Showcase ===================== */}
+        {/* Showcase  */}
 
         <div className="certificate-showcase">
 

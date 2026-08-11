@@ -1,885 +1,776 @@
-/* =========================================================
+/* 
    SKILLS SECTION
-   ========================================================= */
+ */
 
-.skills-section {
-  position: relative;
-  min-height: 100vh;
-  background:
-    radial-gradient(
-      circle at 50% 48%,
-      rgba(139, 92, 246, 0.09),
-      transparent 34%
-    ),
-    #020617;
-  color: white;
+.skills-section{
+    position:relative;
+    overflow:hidden;
+    background:#020617;
+    color:#fff;
 }
 
-.skills-glow {
-  position: absolute;
-  border-radius: 999px;
-  pointer-events: none;
-  filter: blur(90px);
-  opacity: 0.22;
+.skills-glow{
+    position:absolute;
+    border-radius:999px;
+    filter:blur(120px);
+    pointer-events:none;
+    opacity:.25;
 }
 
-.skills-glow-one {
-  width: 420px;
-  height: 420px;
-  left: 5%;
-  top: 25%;
-  background: rgba(124, 58, 237, 0.22);
+.skills-glow-one{
+    width:420px;
+    height:420px;
+    background:#7c3aed;
+    top:8%;
+    left:-120px;
 }
 
-.skills-glow-two {
-  width: 380px;
-  height: 380px;
-  right: 4%;
-  bottom: 15%;
-  background: rgba(168, 85, 247, 0.16);
+.skills-glow-two{
+    width:380px;
+    height:380px;
+    background:#2563eb;
+    right:-100px;
+    bottom:5%;
 }
 
-/* =========================================================
-   SECTION HEADING
-   ========================================================= */
+/* 
+   HEADING
+ */
 
-.skills-eyebrow {
-  margin: 0;
-  color: #a78bfa;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
+.skills-eyebrow{
+    color:#a78bfa;
+    letter-spacing:.35em;
+    text-transform:uppercase;
+    font-size:.75rem;
+    font-weight:700;
 }
 
-.skills-heading {
-  margin: 10px 0 0;
-  color: white;
-  font-size: clamp(2.4rem, 5vw, 4.5rem);
-  line-height: 0.95;
-  font-weight: 800;
-  letter-spacing: -0.05em;
+.skills-heading{
+    margin-top:10px;
+    font-size:clamp(2.8rem,5vw,4.7rem);
+    font-weight:800;
+    line-height:.95;
+    letter-spacing:-.05em;
 }
 
-.skills-heading span {
-  color: #a855f7;
-  text-shadow: 0 0 35px rgba(168, 85, 247, 0.35);
+.skills-heading span{
+    color:#8b5cf6;
 }
 
-/* =========================================================
-   MAIN PLAYGROUND
-   ========================================================= */
-
-.skills-playground {
-  position: relative;
-
-  width: 100%;
-  min-height: 930px;
-
-  overflow: hidden;
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 34px;
-
-  background:
-    radial-gradient(
-      circle at 50% 50%,
-      rgba(139, 92, 246, 0.14),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 20% 20%,
-      rgba(59, 130, 246, 0.035),
-      transparent 30%
-    ),
-    rgba(2, 6, 23, 0.68);
-
-  box-shadow:
-    inset 0 0 80px rgba(139, 92, 246, 0.035),
-    0 30px 100px rgba(0, 0, 0, 0.22);
-
-  perspective: 1200px;
+.skills-description{
+    margin-top:24px;
+    max-width:650px;
+    color:#94a3b8;
+    line-height:1.9;
+    font-size:1.05rem;
 }
 
-/*
-   IMPORTANT:
-   This creates a safe zone at the top.
+/* 
+   MAIN GRID
+ */
 
-   It prevents the first row of skill cards
-   from disappearing underneath the fixed navbar.
-*/
-.skills-playground::before {
-  content: "";
-  position: absolute;
+.arsenal-layout{
 
-  left: 0;
-  right: 0;
-  top: 0;
+    display:grid;
 
-  height: 78px;
+    grid-template-columns:1fr 430px;
 
-  background: linear-gradient(to bottom, rgba(2, 6, 23, 0.35), transparent);
+    gap:70px;
 
-  pointer-events: none;
-  z-index: 1;
+    align-items:center;
+
 }
 
-/* =========================================================
-   CURSOR SPOTLIGHT
-   ========================================================= */
+/* 
+   LEFT SIDE
+ */
 
-.skills-cursor-spotlight {
-  position: absolute;
+.arsenal-orbit{
 
-  width: 360px;
-  height: 360px;
+    position:relative;
 
-  left: calc(var(--spotlight-x) * 1%);
-  top: calc(var(--spotlight-y) * 1%);
+    height:700px;
 
-  transform: translate(-50%, -50%);
+    display:flex;
 
-  border-radius: 50%;
+    align-items:center;
 
-  background: radial-gradient(
-    circle,
-    rgba(168, 85, 247, 0.14) 0%,
-    rgba(139, 92, 246, 0.07) 25%,
-    transparent 70%
-  );
+    justify-content:center;
 
-  pointer-events: none;
-  z-index: 0;
 }
 
-/* =========================================================
+/* 
    ORBIT RINGS
-   ========================================================= */
+ */
 
-.skills-orbit {
-  position: absolute;
+.orbit-ring{
 
-  left: 50%;
-  top: 50%;
+    position:absolute;
 
-  transform: translate(-50%, -50%);
+    border-radius:50%;
 
-  border: 1px solid rgba(139, 92, 246, 0.1);
-  border-radius: 50%;
+    border:1px solid rgba(139,92,246,.12);
 
-  pointer-events: none;
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    pointer-events:none;
+
 }
 
-.skills-orbit-one {
-  width: 250px;
-  height: 250px;
+.orbit-ring-1{
+
+    width:220px;
+    height:220px;
+
+    animation:spinSlow 20s linear infinite;
+
 }
 
-.skills-orbit-two {
-  width: 430px;
-  height: 430px;
+.orbit-ring-2{
+
+    width:380px;
+    height:380px;
+
+    border-style:dashed;
+
+    animation:spinReverse 35s linear infinite;
+
 }
 
-.skills-orbit-three {
-  width: 620px;
-  height: 620px;
-}
+.orbit-ring-3{
 
-/* =========================================================
-   CENTER SKILLS CORE
-   ========================================================= */
+    width:560px;
+    height:560px;
+
+    opacity:.45;
+
+    animation:spinSlow 55s linear infinite;
+
+}
 
 /*
-   The core is positioned from the playground itself.
+   CENTER CORE
+ */
 
-   NOT from the floating cards.
+.arsenal-core{
 
-   Therefore it stays mathematically centered.
+    position:absolute;
+
+    width:210px;
+    height:210px;
+
+    border-radius:50%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    background:
+        radial-gradient(circle at top,
+        rgba(139,92,246,.35),
+        rgba(15,23,42,.96));
+
+    border:1px solid rgba(139,92,246,.35);
+
+    box-shadow:
+        0 0 60px rgba(139,92,246,.35),
+        inset 0 0 30px rgba(255,255,255,.04);
+
+    z-index:5;
+
+}
+
+.core-icon{
+
+    width:64px;
+    height:64px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    background:rgba(139,92,246,.18);
+
+    color:#c4b5fd;
+
+    margin-bottom:16px;
+
+}
+
+.arsenal-core small{
+
+    font-size:.65rem;
+
+    letter-spacing:.35em;
+
+    color:#a78bfa;
+
+    text-transform:uppercase;
+
+}
+
+.arsenal-core h3{
+
+    margin-top:8px;
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+}
+
+.arsenal-core h2{
+
+    margin-top:-4px;
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    color:white;
+
+}
+
+.arsenal-core span{
+
+    margin-top:8px;
+
+    color:#67e8f9;
+
+    letter-spacing:.25em;
+
+    font-size:.7rem;
+
+}
+
+/* 
+   ORBIT NODES
 */
 
-.skills-core {
-  position: absolute;
+.orbit-nodes{
 
-  left: 50%;
-  top: 50%;
+    position:absolute;
 
-  width: 190px;
-  height: 190px;
+    inset:0;
 
-  transform: translate(-50%, -50%);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: radial-gradient(
-    circle at 50% 40%,
-    rgba(139, 92, 246, 0.23),
-    rgba(15, 23, 42, 0.92) 65%
-  );
-
-  border: 1px solid rgba(167, 139, 250, 0.24);
-
-  box-shadow:
-    0 0 0 1px rgba(139, 92, 246, 0.05),
-    0 0 45px rgba(139, 92, 246, 0.16),
-    inset 0 0 45px rgba(139, 92, 246, 0.08);
-
-  z-index: 12;
-
-  text-align: center;
-
-  pointer-events: none;
 }
 
-.skills-core-ring {
-  position: absolute;
+.orbit-node{
 
-  left: 50%;
-  top: 50%;
+    position:absolute;
 
-  transform: translate(-50%, -50%);
+    width:135px;
 
-  border-radius: 50%;
+    padding:12px;
 
-  pointer-events: none;
+    border-radius:18px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+    color:#cbd5e1;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(15,23,42,.72);
+
+    backdrop-filter:blur(18px);
+
+    transition:.35s;
+
 }
 
-.skills-core-ring-one {
-  width: 220px;
-  height: 220px;
+.orbit-node:hover{
 
-  border: 1px solid rgba(168, 85, 247, 0.16);
+    border-color:#8b5cf6;
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 35px rgba(139,92,246,.20);
+
 }
 
-.skills-core-ring-two {
-  width: 250px;
-  height: 250px;
+.orbit-node.active{
 
-  border: 1px dashed rgba(168, 85, 247, 0.1);
+    background:linear-gradient(
+        135deg,
+        rgba(139,92,246,.28),
+        rgba(30,41,59,.95)
+    );
+
+    border-color:#a78bfa;
+
 }
 
-.skills-core-symbol {
-  width: 54px;
-  height: 54px;
+.orbit-node svg{
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    color:#a78bfa;
 
-  margin-bottom: 6px;
-
-  border-radius: 50%;
-
-  color: #c4b5fd;
-
-  background: rgba(139, 92, 246, 0.12);
-
-  box-shadow: 0 0 25px rgba(139, 92, 246, 0.18);
 }
 
-.skills-core span {
-  margin-top: 1px;
+.orbit-node span{
 
-  color: rgba(196, 181, 253, 0.58);
+    font-size:.82rem;
 
-  font-size: 0.62rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
+    font-weight:600;
+
 }
 
-.skills-core strong {
-  margin-top: 4px;
-
-  color: white;
-
-  font-size: 1.45rem;
-  line-height: 1;
-
-  font-weight: 800;
-  letter-spacing: 0.02em;
-}
-
-.skills-core small {
-  margin-top: 7px;
-
-  color: #67e8f9;
-
-  font-size: 0.55rem;
-  font-weight: 700;
-
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-}
-
-/* =========================================================
-   FLOATING SKILLS CONTAINER
-   ========================================================= */
-
-.floating-skills-container {
-  position: absolute;
-
-  /*
-     Safe area.
-
-     78px top prevents cards from entering navbar space.
-     28px on the other sides prevents edge clipping.
-  */
-  top: 90px;
-  right: 45px;
-  bottom: 45px;
-  left: 45px;
-
-  z-index: 5;
-
-  pointer-events: none;
-}
-
-/* =========================================================
-   INDIVIDUAL SKILL CARD
-   ========================================================= */
-
-.floating-skill {
-  position: absolute;
-
-  width: max-content;
-  min-width: 120px;
-  max-width: 150px;
-
-  pointer-events: auto;
-
-  transform-style: preserve-3d;
-
-  cursor: pointer;
-}
-
-.floating-skill-inner {
-  position: relative;
-
-  min-height: 52px;
-
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  padding: 10px 14px;
-
-  border: 1px solid rgba(255, 255, 255, 0.09);
-
-  border-radius: 15px;
-
-  background: linear-gradient(
-    135deg,
-    rgba(30, 41, 59, 0.9),
-    rgba(15, 23, 42, 0.9)
-  );
-
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.22),
-    inset 0 0 18px rgba(139, 92, 246, 0.035);
-
-  backdrop-filter: blur(14px);
-
-  transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease,
-    background 0.3s ease;
-}
-
-.floating-skill:hover .floating-skill-inner {
-  border-color: rgba(167, 139, 250, 0.45);
-
-  background: linear-gradient(
-    135deg,
-    rgba(45, 35, 80, 0.96),
-    rgba(15, 23, 42, 0.96)
-  );
-
-  box-shadow:
-    0 18px 38px rgba(0, 0, 0, 0.28),
-    0 0 28px rgba(139, 92, 246, 0.14);
-}
-
-.floating-skill-icon {
-  width: 30px;
-  height: 30px;
-
-  flex: 0 0 30px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 10px;
-
-  color: #a78bfa;
-
-  background: rgba(139, 92, 246, 0.11);
-
-  box-shadow: inset 0 0 12px rgba(139, 92, 246, 0.08);
-}
-
-.floating-skill span {
-  color: #cbd5e1;
-
-  font-size: 0.72rem;
-  font-weight: 600;
-
-  white-space: nowrap;
-}
-
-.floating-skill-shine {
-  position: absolute;
-
-  top: 0;
-  left: 10%;
-
-  width: 80%;
-  height: 1px;
-
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(196, 181, 253, 0.35),
-    transparent
-  );
-
-  opacity: 0;
-
-  transition: opacity 0.3s ease;
-}
-
-.floating-skill:hover .floating-skill-shine {
-  opacity: 1;
-}
-
-/* =========================================================
-   INDIVIDUAL SKILL POSITIONS
-   ========================================================= */
-
-/*
-   These positions intentionally spread the skills
-   around the COMPLETE playground.
-
-   Every card has its own position.
+/* 
+   NODE POSITIONS
 */
 
-/* 1 React */
-.floating-skill:nth-child(1) {
-  left: 5%;
-  top: 9%;
+.orbit-node:nth-child(1){
+
+    top:2%;
+    left:50%;
+    transform:translateX(-50%);
+
 }
 
-/* 2 JavaScript */
-.floating-skill:nth-child(2) {
-  left: 42%;
-  top: 2%;
+.orbit-node:nth-child(2){
+
+    top:20%;
+    right:4%;
+
 }
 
-/* 3 HTML */
-.floating-skill:nth-child(3) {
-  right: 4%;
-  top: 11%;
+.orbit-node:nth-child(3){
+
+    bottom:20%;
+    right:4%;
+
 }
 
-/* 4 CSS */
-.floating-skill:nth-child(4) {
-  left: 20%;
-  top: 18%;
+.orbit-node:nth-child(4){
+
+    bottom:2%;
+    left:50%;
+    transform:translateX(-50%);
+
 }
 
-/* 5 Bootstrap */
-.floating-skill:nth-child(5) {
-  left: 3%;
-  top: 34%;
+.orbit-node:nth-child(5){
+
+    bottom:20%;
+    left:4%;
+
 }
 
-/* 6 Tailwind */
-.floating-skill:nth-child(6) {
-  right: 14%;
-  top: 19%;
+.orbit-node:nth-child(6){
+
+    top:20%;
+    left:4%;
+
 }
 
-/* 7 ASP.NET */
-.floating-skill:nth-child(7) {
-  left: 4%;
-  top: 57%;
+/* 
+   RIGHT PANEL
+ */
+
+.arsenal-panel{
+
+    background:rgba(15,23,42,.72);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    padding:38px;
+
+    backdrop-filter:blur(22px);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.30),
+        inset 0 0 25px rgba(255,255,255,.02);
+
 }
 
-/* 8 Node.js */
-.floating-skill:nth-child(8) {
-  right: 2%;
-  top: 47%;
+.panel-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:28px;
+
 }
 
-/* 9 MySQL */
-.floating-skill:nth-child(9) {
-  left: 14%;
-  top: 74%;
+.panel-icon{
+
+    width:70px;
+    height:70px;
+
+    border-radius:18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(139,92,246,.15);
+
+    color:#a78bfa;
+
 }
 
-/* 10 C++ */
-.floating-skill:nth-child(10) {
-  left: 4%;
-  bottom: 28%;
+.panel-label{
+
+    font-size:.7rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:.28em;
+
+    color:#94a3b8;
+
+    margin-bottom:4px;
+
 }
 
-/* 11 Java */
-.floating-skill:nth-child(11) {
-  left: 37%;
-  bottom: 4%;
+.panel-header h3{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    color:white;
+
 }
 
-/* 12 C# */
-.floating-skill:nth-child(12) {
-  right: 29%;
-  bottom: 8%;
+.panel-description{
+
+    color:#94a3b8;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
 }
 
-/* 13 Git */
-.floating-skill:nth-child(13) {
-  right: 9%;
-  top: 58%;
+/* 
+   SKILL CHIPS
+ */
+
+.panel-skills{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-bottom:40px;
+
 }
 
-/* 14 GitHub */
-.floating-skill:nth-child(14) {
-  right: 2%;
-  top: 29%;
+.skill-chip{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:12px 18px;
+
+    border-radius:999px;
+
+    border:1px solid rgba(139,92,246,.18);
+
+    background:rgba(30,41,59,.65);
+
+    color:#e2e8f0;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    transition:.35s;
+
 }
 
-/* 15 Postman */
-.floating-skill:nth-child(15) {
-  left: 47%;
-  bottom: 3%;
+.skill-chip svg{
+
+    color:#8b5cf6;
+
 }
 
-/* 16 VS Code */
-.floating-skill:nth-child(16) {
-  left: 47%;
-  top: 18%;
+.skill-chip:hover{
+
+    transform:translateY(-4px);
+
+    background:rgba(139,92,246,.16);
+
+    border-color:#a78bfa;
+
+    box-shadow:0 10px 25px rgba(139,92,246,.18);
+
 }
 
-/* 17 Figma */
-.floating-skill:nth-child(17) {
-  right: 2%;
-  bottom: 16%;
+/* 
+   QUOTE
+*/
+
+.arsenal-quote{
+
+    margin-top:10px;
+
+    padding:24px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.03);
+
+    border-left:4px solid #8b5cf6;
+
 }
 
-/* 18 Visual Studio */
-.floating-skill:nth-child(18) {
-  right: 32%;
-  top: 53%;
+.arsenal-quote h4{
+
+    margin-bottom:12px;
+
+    color:white;
+
+    font-size:1rem;
+
 }
 
-/* 19 IntelliJ IDEA */
-.floating-skill:nth-child(19) {
-  left: 10%;
-  bottom: 12%;
+.arsenal-quote p{
+
+    color:#94a3b8;
+
+    line-height:1.8;
+
 }
 
-/* 20 Three.js */
-.floating-skill:nth-child(20) {
-  left: 48%;
-  top: 10%;
+/* 
+   STATS
+ */
+
+.arsenal-stats{
+
+    margin-top:70px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:24px;
+
 }
 
-/* 21 GSAP */
-.floating-skill:nth-child(21) {
-  right: 31%;
-  top: 12%;
+.stat-card{
+
+    padding:28px;
+
+    border-radius:22px;
+
+    background:rgba(15,23,42,.72);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    text-align:center;
+
+    transition:.35s;
+
 }
 
-/* 22 Framer Motion */
-.floating-skill:nth-child(22) {
-  right: 10%;
-  bottom: 7%;
+.stat-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#8b5cf6;
+
 }
 
-/* 23 React Tilt */
-.floating-skill:nth-child(23) {
-  left: 25%;
-  top: 54%;
+.stat-card strong{
+
+    display:block;
+
+    font-size:2.3rem;
+
+    color:white;
+
+    font-weight:800;
+
 }
 
-/* 24 React CountUp */
-.floating-skill:nth-child(24) {
-  right: 14%;
-  bottom: 22%;
+.stat-card span{
+
+    color:#94a3b8;
+
+    font-size:.9rem;
+
 }
 
-/* 25 EmailJS */
-.floating-skill:nth-child(25) {
-  left: 33%;
-  bottom: 10%;
+/* 
+   ANIMATIONS
+ */
+
+@keyframes spinSlow{
+
+    from{
+
+        transform:translate(-50%,-50%) rotate(0deg);
+
+    }
+
+    to{
+
+        transform:translate(-50%,-50%) rotate(360deg);
+
+    }
+
 }
 
-/* 26 Vite */
-.floating-skill:nth-child(26) {
-  left: 18%;
-  top: 12%;
+@keyframes spinReverse{
+
+    from{
+
+        transform:translate(-50%,-50%) rotate(360deg);
+
+    }
+
+    to{
+
+        transform:translate(-50%,-50%) rotate(0deg);
+
+    }
+
 }
 
-/* 27 Swagger */
-.floating-skill:nth-child(27) {
-  left: 28%;
-  top: 18%;
+/* 
+   RESPONSIVE
+ */
+
+@media(max-width:1100px){
+
+    .arsenal-layout{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+    }
+
+    .arsenal-orbit{
+
+        height:620px;
+
+    }
+
+    .arsenal-panel{
+
+        padding:30px;
+
+    }
+
 }
 
-/* =========================================================
-   CATEGORY LIST
-   ========================================================= */
+@media(max-width:768px){
 
-.skills-category-list {
-  margin-top: 24px;
+    .arsenal-orbit{
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+        height:auto;
 
-  gap: 10px;
+        padding:50px 0;
+
+    }
+
+    .orbit-ring{
+
+        display:none;
+
+    }
+
+    .orbit-nodes{
+
+        position:relative;
+
+        display:grid;
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:16px;
+
+        margin-top:50px;
+
+    }
+
+    .orbit-node,
+    .orbit-node:nth-child(n){
+
+        position:relative;
+
+        top:auto;
+
+        bottom:auto;
+
+        left:auto;
+
+        right:auto;
+
+        transform:none;
+
+        width:100%;
+
+    }
+
+    .arsenal-core{
+
+        position:relative;
+
+        margin:0 auto;
+
+    }
+
+    .arsenal-stats{
+
+        grid-template-columns:1fr;
+
+    }
+
 }
 
-.skills-category-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+@media(max-width:520px){
 
-  padding: 9px 14px;
+    .orbit-nodes{
 
-  border: 1px solid rgba(255, 255, 255, 0.07);
+        grid-template-columns:1fr;
 
-  border-radius: 12px;
+    }
 
-  background: rgba(15, 23, 42, 0.55);
+    .skills-heading{
 
-  color: #64748b;
+        font-size:2.7rem;
 
-  font-size: 0.68rem;
-  font-weight: 500;
+    }
 
-  backdrop-filter: blur(10px);
-}
+    .panel-header h3{
 
-.skills-category-item svg {
-  color: #8b5cf6;
-}
+        font-size:1.6rem;
 
-/* =========================================================
-   LEARNING CARD
-   ========================================================= */
+    }
 
-.skills-learning-card {
-  margin-top: 22px;
+    .arsenal-panel{
 
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
+        padding:22px;
 
-  padding: 20px 22px;
+    }
 
-  border: 1px solid rgba(139, 92, 246, 0.12);
-
-  border-radius: 18px;
-
-  background: linear-gradient(
-    135deg,
-    rgba(139, 92, 246, 0.055),
-    rgba(15, 23, 42, 0.45)
-  );
-}
-
-.skills-learning-icon {
-  width: 38px;
-  height: 38px;
-
-  flex: 0 0 38px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 11px;
-
-  color: #a78bfa;
-
-  background: rgba(139, 92, 246, 0.1);
-}
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 1100px) {
-  .skills-playground {
-    min-height: 720px;
-  }
-
-  .floating-skills-container {
-    top: 85px;
-    right: 20px;
-    bottom: 22px;
-    left: 20px;
-  }
-
-  .skills-orbit-three {
-    width: 600px;
-    height: 600px;
-  }
-
-  .skills-core {
-    width: 165px;
-    height: 165px;
-  }
-
-  .floating-skill-inner {
-    padding: 8px 11px;
-    min-height: 46px;
-  }
-
-  .floating-skill {
-    min-width: 108px;
-    max-width: 132px;
-  }
-
-  .floating-skill span {
-    font-size: 0.67rem;
-  }
-
-  .floating-skill-icon {
-    width: 27px;
-    height: 27px;
-    flex-basis: 27px;
-  }
-}
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 700px) {
-  .skills-section {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
-
-  .skills-playground {
-    min-height: auto;
-
-    padding: 30px 18px;
-
-    overflow: visible;
-
-    border-radius: 24px;
-  }
-
-  .skills-playground::before {
-    display: none;
-  }
-
-  .skills-cursor-spotlight {
-    display: none;
-  }
-
-  .skills-orbit {
-    display: none;
-  }
-
-  .skills-core {
-    position: relative;
-
-    left: auto;
-    top: auto;
-
-    transform: none;
-
-    margin: 0 auto 35px;
-
-    width: 155px;
-    height: 155px;
-  }
-
-  .skills-core-ring-one {
-    width: 190px;
-    height: 190px;
-  }
-
-  .skills-core-ring-two {
-    width: 225px;
-    height: 225px;
-  }
-
-  .floating-skills-container {
-    position: relative;
-
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 12px;
-
-    width: 100%;
-  }
-
-  .floating-skill,
-  .floating-skill:nth-child(n) {
-    position: relative;
-
-    left: auto;
-    right: auto;
-    top: auto;
-    bottom: auto;
-
-    width: 100%;
-
-    transform: none !important;
-  }
-
-  .floating-skill-inner {
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  .floating-skill span {
-    font-size: 0.68rem;
-  }
-
-  .skills-category-list {
-    margin-top: 18px;
-  }
-
-  .skills-learning-card {
-    padding: 16px;
-  }
-}
-
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 430px) {
-  .floating-skills-container {
-    grid-template-columns: 1fr;
-  }
-
-  .skills-heading {
-    font-size: 2.5rem;
-  }
-
-  .skills-core {
-    width: 145px;
-    height: 145px;
-  }
-
-  .skills-core strong {
-    font-size: 1.25rem;
-  }
 }

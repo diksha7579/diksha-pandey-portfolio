@@ -27,7 +27,7 @@ function Education() {
 
       <div className="relative z-10 mx-auto max-w-7xl">
 
-        {/* ====================== Heading ====================== */}
+        {/*  Heading  */}
 
         <motion.div
           initial={{
@@ -72,7 +72,7 @@ function Education() {
 
         </motion.div>
 
-        {/* ====================== Timeline ====================== */}
+        {/*  Timeline  */}
 
         <div className="education-timeline">
 
@@ -108,7 +108,7 @@ function Education() {
 
               >
 
-                {/* ====================== Timeline Side ====================== */}
+                {/*  Timeline Side  */}
 
                 <div className="education-line">
 
@@ -136,7 +136,7 @@ function Education() {
 
                 </div>
 
-                {/* ====================== Content ====================== */}
+                {/*  Content */}
 
                 <div className="education-content">
 
@@ -211,7 +211,7 @@ function Education() {
                     </div>
 
                   </div>  
-                                      {/* ================= Academic Highlights ================= */}
+                                      {/* Academic Highlights  */}
 
                   {item.coursework && (
 
@@ -245,7 +245,6 @@ function Education() {
                     </>
 
                   )}
-
 
                 </div>
 

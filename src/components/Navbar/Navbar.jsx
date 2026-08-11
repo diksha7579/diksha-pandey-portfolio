@@ -84,7 +84,7 @@ function Navbar() {
         <div className="hidden items-center gap-2 lg:flex">
           {/* GitHub */}
           <a
-            href="https://github.com/diksha22scfksp"
+            href="https://github.com/diksha7579"
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
@@ -188,7 +188,7 @@ function Navbar() {
           <div className="mt-2 flex gap-2 border-t border-white/10 pt-3">
             {/* Mobile GitHub */}
             <a
-              href="https://github.com/diksha22scfksp"
+              href="https://github.com/diksha7579"
               target="_blank"
               rel="noreferrer"
               className="
