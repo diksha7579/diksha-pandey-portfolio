@@ -9,7 +9,7 @@ import {
   Sparkles,
 } from "lucide-react";
 
-import educationData from "../../data/educationData";
+import EducationData from "../../data/EducationData";
 
 import "./Education.css";
 
