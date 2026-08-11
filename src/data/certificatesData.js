@@ -1,3 +1,16 @@
+import IBM from "../assets/images/certificates/IBM Certificate.jpg";
+import JavaFullStack from "../assets/images/certificates/JavaFullStack Certificate.jpg";
+import Infosys from "../assets/images/certificates/Infosys Certificate.jpg";
+import Microsoft from "../assets/images/certificates/Microsoft Certificate.jpg";
+import DataScience from "../assets/images/certificates/Data Science Certificate.jpg";
+import SQL from "../assets/images/certificates/SQL Certification.jpg";
+import NPTEL from "../assets/images/certificates/NPTEL Certificate.jpg";
+import Network from "../assets/images/certificates/Network certificate.jpg";
+import Cyber from "../assets/images/certificates/Cyber Certificate.jpg";
+import GreatLearning from "../assets/images/certificates/GreatLearning Certificate.jpg";
+import ALGO from "../assets/images/certificates/ALGO Certificate.jpg";
+import LeetCode50Days from "../assets/images/certificates/50days leetcode.jpg";
+
 const certificatesData = [
   {
     id: 1,
@@ -7,7 +20,7 @@ const certificatesData = [
     year: "2025",
     category: "Web Development",
     featured: true,
-    image: "/src/assets/images/certificates/IBM Certificate.jpg",
+    image: IBM,
     credential: "",
     description:
       "Successfully completed IBM SkillBuild training focused on modern web development concepts, responsive websites, HTML, CSS, JavaScript and frontend best practices.",
@@ -21,13 +34,11 @@ const certificatesData = [
     year: "2024",
     category: "Full Stack",
     featured: true,
-    image: "/src/assets/images/certificates/JavaFullStack Certificate.jpg",
+    image: JavaFullStack,
     credential: "",
     description:
       "Completed Java Full Stack Developer virtual internship covering Java, Spring Boot, Hibernate, MySQL, HTML, CSS, JavaScript and Git.",
   },
-
-
 
   {
     id: 3,
@@ -37,7 +48,7 @@ const certificatesData = [
     year: "2024",
     category: "Web Development",
     featured: false,
-    image: "/src/assets/images/certificates/Infosys Certificate.jpg",
+    image: Infosys,
     credential: "",
     description:
       "Completed web development training through Infosys Springboard focusing on responsive design and frontend technologies.",
@@ -51,12 +62,11 @@ const certificatesData = [
     year: "2024",
     category: "Web Development",
     featured: true,
-    image: "/src/assets/images/certificates/Microsoft Certificate.jpg",
+    image: Microsoft,
     credential: "",
     description:
       "Successfully completed Website Development training provided by Microsoft covering modern frontend development practices.",
   },
-
 
   {
     id: 5,
@@ -66,7 +76,7 @@ const certificatesData = [
     year: "2025",
     category: "Data Science",
     featured: false,
-    image: "/src/assets/images/certificates/Data Science Certificate.jpg",
+    image: DataScience,
     credential: "",
     description:
       "Completed introductory Data Science certification covering analytics, data processing and machine learning fundamentals.",
@@ -80,7 +90,7 @@ const certificatesData = [
     year: "2024",
     category: "Database",
     featured: false,
-    image: "/src/assets/images/certificates/SQL Certification.jpg",
+    image: SQL,
     credential: "",
     description:
       "Learned SQL queries, joins, normalization, indexing and database management concepts.",
@@ -94,7 +104,7 @@ const certificatesData = [
     year: "2025",
     category: "Computer Science",
     featured: false,
-    image: "/src/assets/images/certificates/NPTEL Certificate.jpg",
+    image: NPTEL,
     credential: "",
     description:
       "Successfully completed NPTEL Compiler Design course covering lexical analysis, parsing and compiler fundamentals.",
@@ -108,7 +118,7 @@ const certificatesData = [
     year: "2024",
     category: "Networking",
     featured: false,
-    image: "/src/assets/images/certificates/Network certificate.jpg",
+    image: Network,
     credential: "",
     description:
       "Completed Cisco networking fundamentals covering networking concepts and communication protocols.",
@@ -122,7 +132,7 @@ const certificatesData = [
     year: "2023",
     category: "Cyber Security",
     featured: false,
-    image: "/src/assets/images/certificates/Cyber Certificate.jpg",
+    image: Cyber,
     credential: "",
     description:
       "Learned cybersecurity fundamentals including threats, vulnerabilities and secure computing practices.",
@@ -136,7 +146,7 @@ const certificatesData = [
     year: "2024",
     category: "Artificial Intelligence",
     featured: false,
-    image: "/src/assets/images/certificates/GreatLearning Certificate.jpg",
+    image: GreatLearning,
     credential: "",
     description:
       "Completed introductory Artificial Intelligence certification covering AI concepts and practical applications.",
@@ -150,7 +160,7 @@ const certificatesData = [
     year: "2024",
     category: "Academic",
     featured: false,
-    image: "/src/assets/images/certificates/ALGO Certificate.jpg",
+    image: ALGO,
     credential: "",
     description:
       "Successfully completed project-based learning activities focused on software engineering and teamwork.",
@@ -164,7 +174,7 @@ const certificatesData = [
     year: "2025",
     category: "Programming",
     featured: false,
-    image: "/src/assets/images/certificates/50days leetcode.jpg",
+    image: LeetCode50Days,
     credential: "",
     description:
       "Successfully completed a continuous coding challenge demonstrating consistency in problem solving and algorithm practice.",
